@@ -56,11 +56,11 @@ namespace WpfApplication1
             }
             if (DateTime.Now< this.StartDate)
             {
-                throw new ApplicationException(string.Format("Отсутствует лицензия!", StartDate.ToShortDateString()));
+                throw new ApplicationException(string.Format("Отсутствует лицензия!\nСрок действия лицензии еще не начался! Начало {0}\nОбратитесь к автору.", StartDate.ToShortDateString()));
             }
             if (DateTime.Now > this.UpdateTo)
             {
-                throw new ApplicationException(string.Format("Отсутствует лицензия!", UpdateTo.ToShortDateString()));
+                throw new ApplicationException(string.Format("Отсутствует лицензия!\nСрок действия лицензии истек {0}!\nОбратитесь к автору.", UpdateTo.ToShortDateString()));
             }
         }
     }
